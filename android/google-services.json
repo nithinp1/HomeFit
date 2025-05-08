@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "601681661577",
+    "project_id": "homefit-7c402",
+    "storage_bucket": "homefit-7c402.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:601681661577:android:a8e6e2293975b28070c058",
+        "android_client_info": {
+          "package_name": "com.example.homefit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbwNzOEHlfaVXFgmrT0bxOxeM4UMHzW9o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
