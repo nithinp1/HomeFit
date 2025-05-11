@@ -22,7 +22,7 @@ class UserService {
   }) async {
     try {
       await firebase.currentUser?.updateDisplayName(displayName);
-      await firebase.currentUser?.updateEmail(email);
+      await firebase.currentUser?.verifyBeforeUpdateEmail(email);
       return true;
     } catch (e) {
       log('Error changing user data: $e');

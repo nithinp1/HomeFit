@@ -34,6 +34,19 @@ class ReminderBloc extends Bloc<ReminderEvent, ReminderState> {
     int? dayTime,
   ) async {
     final flutterNotificationsPlugin = FlutterLocalNotificationsPlugin();
+
+    // Initialize the plugin if not already initialized
+    const androidInitializationSettings = AndroidInitializationSettings(
+      'app_icon',
+    );
+    const iOSInitializationSettings = DarwinInitializationSettings();
+    const initializationSettings = InitializationSettings(
+      android: androidInitializationSettings,
+      iOS: iOSInitializationSettings,
+    );
+
+    await flutterNotificationsPlugin.initialize(initializationSettings);
+
     final androidPlatformChannelSpecifics = AndroidNotificationDetails(
       'your other channel id',
       'your other channel name',
@@ -51,9 +64,7 @@ class ReminderBloc extends Bloc<ReminderEvent, ReminderState> {
       "Hey, it's time to start your exercises!",
       _scheduleWeekly(dateTime, days: _createNotificationDayOfTheWeek(dayTime)),
       platformChannelSpecifics,
-      uiLocalNotificationDateInterpretation:
-          UILocalNotificationDateInterpretation.absoluteTime,
-      androidAllowWhileIdle: true,
+      androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
       matchDateTimeComponents: DateTimeComponents.dayOfWeekAndTime,
     );
   }
