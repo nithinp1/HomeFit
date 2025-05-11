@@ -42,17 +42,17 @@ dependencies:
   percent_indicator: ^4.2.2
   firebase_storage: ^12.4.5
   flutter_local_notifications: ^19.2.0
-  image_picker: ^0.8.7+4
-  dots_indicator: ^2.0.0
-  permission_handler: ^10.2.0
+  image_picker: ^1.1.2
+  dots_indicator: ^4.0.1
+  permission_handler: ^12.0.0+1
   url_launcher: ^6.1.7
   sliding_up_panel: ^2.0.0+1
-  custom_timer: ^0.0.6
+  custom_timer: ^0.2.3
   video_player: ^2.1.12
   chewie: ^1.2.3
   timezone: ^0.10.1
   flutter_local_notifications_linux: ^6.0.0
- 
+  package_info_plus: ^8.3.0
  
   
 

@@ -16,7 +16,26 @@ class StartWorkoutTimer extends StatefulWidget {
   StartWorkoutTimerState createState() => StartWorkoutTimerState();
 }
 
-class StartWorkoutTimerState extends State<StartWorkoutTimer> {
+class StartWorkoutTimerState extends State<StartWorkoutTimer>
+    with SingleTickerProviderStateMixin {
+  late CustomTimerController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = CustomTimerController(
+      vsync: this,
+      begin: Duration(seconds: widget.time),
+      end: Duration(seconds: 0),
+    );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return widget.isPaused ? _createPauseText() : _createCountdownTimer();
@@ -24,10 +43,8 @@ class StartWorkoutTimerState extends State<StartWorkoutTimer> {
 
   Widget _createCountdownTimer() {
     return CustomTimer(
-      from: Duration(seconds: widget.time),
-      to: Duration(seconds: 0),
-      onBuildAction: CustomTimerAction.auto_start,
-      builder: (CustomTimerRemainingTime remaining) {
+      controller: _controller,
+      builder: (CustomTimerState state, CustomTimerRemainingTime remaining) {
         return Text(
           "${remaining.minutes}:${remaining.seconds}",
           style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
