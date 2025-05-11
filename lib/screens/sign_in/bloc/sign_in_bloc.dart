@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'dart:developer';
 import 'package:homefit/core/service/auth_service.dart';
 import 'package:homefit/core/service/validation_service.dart';
 import 'package:flutter/material.dart';
@@ -25,9 +24,7 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
             passwordController.text,
           );
           emit(NextTabBarPageState());
-          log("Go to the next page");
         } catch (e) {
-          log('E to tstrng: $e');
           emit(ErrorState(message: e.toString()));
         }
       } else {
