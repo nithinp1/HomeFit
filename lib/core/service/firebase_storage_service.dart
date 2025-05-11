@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:developer';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -8,9 +9,9 @@ class FirebaseStorageService {
   FirebaseStorage storage = FirebaseStorage.instance;
   static Future<void> listExample() async {
     ListResult result = await FirebaseStorage.instance.ref().listAll();
-    result.items.forEach((element) {
-      print(element.name);
-    });
+    for (var element in result.items) {
+      log('Item name: ${element.name}');
+    }
   }
 
   static Future<bool> uploadImage({required String filePath}) async {
@@ -27,7 +28,7 @@ class FirebaseStorageService {
       }
       return false;
     } catch (e) {
-      print(e);
+      log('Error uploading image: $e');
       return false;
     }
   }

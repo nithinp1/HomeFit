@@ -13,10 +13,10 @@ class StartWorkoutTimer extends StatefulWidget {
   });
 
   @override
-  _StartWorkoutTimerState createState() => _StartWorkoutTimerState();
+  StartWorkoutTimerState createState() => StartWorkoutTimerState();
 }
 
-class _StartWorkoutTimerState extends State<StartWorkoutTimer> {
+class StartWorkoutTimerState extends State<StartWorkoutTimer> {
   @override
   Widget build(BuildContext context) {
     return widget.isPaused ? _createPauseText() : _createCountdownTimer();

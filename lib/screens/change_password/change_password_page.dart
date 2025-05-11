@@ -14,10 +14,10 @@ class ChangePasswordScreen extends StatefulWidget {
   const ChangePasswordScreen({super.key});
 
   @override
-  _ChangePasswordScreenState createState() => _ChangePasswordScreenState();
+  ChangePasswordScreenState createState() => ChangePasswordScreenState();
 }
 
-class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
+class ChangePasswordScreenState extends State<ChangePasswordScreen> {
   final TextEditingController _newPassController = TextEditingController();
   final TextEditingController _confirmPassController = TextEditingController();
   final User? user = FirebaseAuth.instance.currentUser;

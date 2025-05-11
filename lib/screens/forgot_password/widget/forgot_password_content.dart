@@ -12,10 +12,10 @@ class ForgotPasswordContent extends StatefulWidget {
   const ForgotPasswordContent({super.key});
 
   @override
-  _ForgotPasswordContentState createState() => _ForgotPasswordContentState();
+  ForgotPasswordContentState createState() => ForgotPasswordContentState();
 }
 
-class _ForgotPasswordContentState extends State<ForgotPasswordContent> {
+class ForgotPasswordContentState extends State<ForgotPasswordContent> {
   bool _isButtonEnabled = false;
   bool _isTextFieldError = false;
 

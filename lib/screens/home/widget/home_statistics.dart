@@ -28,7 +28,12 @@ class HomeStatistics extends StatelessWidget {
         color: ColorConstants.white,
         boxShadow: [
           BoxShadow(
-            color: ColorConstants.textBlack.withOpacity(0.12),
+            color: Color.fromRGBO(
+              ColorConstants.textBlack.r.toInt(),
+              ColorConstants.textBlack.g.toInt(),
+              ColorConstants.textBlack.b.toInt(),
+              0.12,
+            ),
             blurRadius: 5.0,
             spreadRadius: 1.1,
           ),
@@ -124,7 +129,12 @@ class DataWorkouts extends StatelessWidget {
         color: ColorConstants.white,
         boxShadow: [
           BoxShadow(
-            color: ColorConstants.textBlack.withOpacity(0.12),
+            color: Color.fromRGBO(
+              ColorConstants.textBlack.r.toInt(),
+              ColorConstants.textBlack.g.toInt(),
+              ColorConstants.textBlack.b.toInt(),
+              0.12,
+            ),
             blurRadius: 5.0,
             spreadRadius: 1.1,
           ),

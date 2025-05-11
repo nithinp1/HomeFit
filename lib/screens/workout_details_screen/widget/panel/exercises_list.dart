@@ -78,7 +78,12 @@ class ExerciseCell extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
               boxShadow: [
                 BoxShadow(
-                  color: ColorConstants.textBlack.withOpacity(0.12),
+                  color: Color.fromRGBO(
+                    ColorConstants.textBlack.r.toInt(),
+                    ColorConstants.textBlack.g.toInt(),
+                    ColorConstants.textBlack.b.toInt(),
+                    0.12,
+                  ),
                   blurRadius: 5.0,
                   spreadRadius: 1.1,
                 ),
@@ -140,7 +145,12 @@ class ExerciseCell extends StatelessWidget {
           child: LinearPercentIndicator(
             percent: currentExercise.progress,
             progressColor: ColorConstants.primaryColor,
-            backgroundColor: ColorConstants.primaryColor.withOpacity(0.12),
+            backgroundColor: Color.fromRGBO(
+              ColorConstants.primaryColor.r.toInt(),
+              ColorConstants.primaryColor.g.toInt(),
+              ColorConstants.primaryColor.b.toInt(),
+              0.12,
+            ),
             lineHeight: 6,
             padding: EdgeInsets.zero,
           ),

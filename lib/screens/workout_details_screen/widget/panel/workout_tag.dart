@@ -13,7 +13,12 @@ class WorkoutTag extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 17, vertical: 10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: ColorConstants.primaryColor.withOpacity(0.12),
+        color: Color.fromRGBO(
+          ColorConstants.primaryColor.r.toInt(),
+          ColorConstants.primaryColor.g.toInt(),
+          ColorConstants.primaryColor.b.toInt(),
+          0.12,
+        ),
       ),
       child: Row(
         children: [

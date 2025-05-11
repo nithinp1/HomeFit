@@ -27,10 +27,10 @@ class FitnessTextField extends StatefulWidget {
   });
 
   @override
-  _FitnessTextFieldState createState() => _FitnessTextFieldState();
+  FitnessTextFieldState createState() => FitnessTextFieldState();
 }
 
-class _FitnessTextFieldState extends State<FitnessTextField> {
+class FitnessTextFieldState extends State<FitnessTextField> {
   final focusNode = FocusNode();
   bool stateObscureText = false;
   bool stateIsError = false;
@@ -124,7 +124,12 @@ class _FitnessTextFieldState extends State<FitnessTextField> {
             color:
                 stateIsError
                     ? ColorConstants.errorColor
-                    : ColorConstants.textFieldBorder.withOpacity(0.4),
+                    : Color.fromRGBO(
+                      ColorConstants.textFieldBorder.r.toInt(),
+                      ColorConstants.textFieldBorder.g.toInt(),
+                      ColorConstants.textFieldBorder.b.toInt(),
+                      0.4,
+                    ),
           ),
         ),
         focusedBorder: OutlineInputBorder(

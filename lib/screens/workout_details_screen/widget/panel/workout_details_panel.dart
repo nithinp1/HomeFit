@@ -45,7 +45,7 @@ class WorkoutDetailsPanel extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Text(
-        workout.title + "  " + TextConstants.workout,
+        "${workout.title}  ${TextConstants.workout}",
         style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
       ),
     );

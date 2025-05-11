@@ -145,9 +145,11 @@ class HomeContent extends StatelessWidget {
                           ),
                         ),
                 onTap: () async {
+                  if (!context.mounted) return;
                   await Navigator.of(context).push(
                     MaterialPageRoute(builder: (_) => EditAccountScreen()),
                   );
+                  if (!context.mounted) return;
                   BlocProvider.of<HomeBloc>(context).add(ReloadImageEvent());
                 },
               );
@@ -168,7 +170,12 @@ class HomeContent extends StatelessWidget {
         color: ColorConstants.white,
         boxShadow: [
           BoxShadow(
-            color: ColorConstants.textBlack.withOpacity(0.12),
+            color: Color.fromRGBO(
+              ColorConstants.textBlack.r.toInt(),
+              ColorConstants.textBlack.g.toInt(),
+              ColorConstants.textBlack.b.toInt(),
+              0.12,
+            ),
             blurRadius: 5.0,
             spreadRadius: 1.1,
           ),

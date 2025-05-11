@@ -28,7 +28,7 @@ class WorkoutDetailsBody extends StatelessWidget {
         child: BlocBuilder<WorkoutDetailsBloc, WorkoutDetailsState>(
           builder: (context, state) {
             return GestureDetector(
-              child: Container(
+              child: SizedBox(
                 width: 30,
                 height: 30,
                 child: Image(image: AssetImage(PathConstants.back)),

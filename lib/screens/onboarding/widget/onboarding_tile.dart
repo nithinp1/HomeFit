@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 
 class OnboardingTile extends StatelessWidget {
-  final title, imagePath, mainText;
+  final String title;
+  final String imagePath;
+  final String mainText;
 
-  const OnboardingTile({super.key, this.imagePath, this.mainText, this.title});
+  const OnboardingTile({
+    super.key,
+    required this.imagePath,
+    required this.mainText,
+    required this.title,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -13,29 +20,18 @@ class OnboardingTile extends StatelessWidget {
       child: Column(
         children: [
           const SizedBox(height: 34),
-          Expanded(
-            child: Image.asset(
-              imagePath,
-            ),
-          ),
+          Expanded(child: Image.asset(imagePath)),
           const SizedBox(height: 65),
           Text(
             title,
-            style: TextStyle(
-              fontWeight: FontWeight.w700,
-              fontSize: 24.0,
-            ),
+            style: TextStyle(fontWeight: FontWeight.w700, fontSize: 24.0),
           ),
           const SizedBox(height: 15),
           Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: screenWidth / 100,
-            ),
+            padding: EdgeInsets.symmetric(horizontal: screenWidth / 100),
             child: Text(
               mainText,
-              style: TextStyle(
-                fontSize: 16.0,
-              ),
+              style: TextStyle(fontSize: 16.0),
               textAlign: TextAlign.center,
             ),
           ),

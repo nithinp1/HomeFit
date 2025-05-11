@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:homefit/core/extensions/exceptions.dart';
+import 'dart:developer';
 
 class AuthService {
   static final FirebaseAuth auth = FirebaseAuth.instance;
@@ -52,7 +53,7 @@ class AuthService {
 }
 
 String getExceptionMessage(FirebaseAuthException e) {
-  print(e.code);
+  log(e.code);
   switch (e.code) {
     case 'user-not-found':
       return 'User not found';

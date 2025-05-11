@@ -15,10 +15,10 @@ class SettingsTextField extends StatefulWidget {
   });
 
   @override
-  _SettingsTextFieldState createState() => _SettingsTextFieldState();
+  SettingsTextFieldState createState() => SettingsTextFieldState();
 }
 
-class _SettingsTextFieldState extends State<SettingsTextField> {
+class SettingsTextFieldState extends State<SettingsTextField> {
   final focusNode = FocusNode();
   bool stateObscureText = false;
 

@@ -20,10 +20,10 @@ class StartWorkoutVideo extends StatefulWidget {
     required this.onPauseTapped,
   });
   @override
-  _StartWorkoutVideoState createState() => _StartWorkoutVideoState();
+  StartWorkoutVideoState createState() => StartWorkoutVideoState();
 }
 
-class _StartWorkoutVideoState extends State<StartWorkoutVideo> {
+class StartWorkoutVideoState extends State<StartWorkoutVideo> {
   late VideoPlayerController _controller;
   // late Future<void> _initializeVideoPlayerFuture;
   late bool isPlayButtonHidden = false;

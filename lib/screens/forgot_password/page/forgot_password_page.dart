@@ -62,6 +62,7 @@ class ForgotPasswordPage extends StatelessWidget {
       ),
     );
     await Future.delayed(Duration(seconds: 2));
+    if (!context.mounted) return;
     Navigator.pop(context);
   }
 }

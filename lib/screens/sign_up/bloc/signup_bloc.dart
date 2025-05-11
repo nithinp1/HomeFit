@@ -1,5 +1,5 @@
 import 'dart:async';
-
+import 'dart:developer';
 import 'package:bloc/bloc.dart';
 import 'package:homefit/core/service/auth_service.dart';
 import 'package:homefit/core/service/validation_service.dart';
@@ -34,7 +34,7 @@ class SignUpBloc extends Bloc<SignupEvent, SignUpState> {
             userNameController.text,
           );
           yield NextTabBarPageState();
-          print("Go to the next page");
+          log("Go to the next page");
         } catch (e) {
           yield ErrorState(message: e.toString());
         }

@@ -19,10 +19,10 @@ class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
 
   @override
-  _SettingsScreenState createState() => _SettingsScreenState();
+  SettingsScreenState createState() => SettingsScreenState();
 }
 
-class _SettingsScreenState extends State<SettingsScreen> {
+class SettingsScreenState extends State<SettingsScreen> {
   String? photoUrl;
 
   Future<void> _launchUrl(String url) async {
@@ -87,6 +87,16 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             ),
                   ),
                   TextButton(
+                    style: TextButton.styleFrom(
+                      backgroundColor: Color.fromRGBO(
+                        ColorConstants.primaryColor.r.toInt(),
+                        ColorConstants.primaryColor.g.toInt(),
+                        ColorConstants.primaryColor.b.toInt(),
+                        0.16,
+                      ),
+                      shape: CircleBorder(),
+                    ),
+                    child: Icon(Icons.edit, color: ColorConstants.primaryColor),
                     onPressed: () async {
                       await Navigator.push(
                         context,
@@ -98,13 +108,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         photoUrl = user?.photoURL;
                       });
                     },
-                    style: TextButton.styleFrom(
-                      shape: CircleBorder(),
-                      backgroundColor: ColorConstants.primaryColor.withOpacity(
-                        0.16,
-                      ),
-                    ),
-                    child: Icon(Icons.edit, color: ColorConstants.primaryColor),
                   ),
                 ],
               ),
@@ -115,10 +118,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ),
               SizedBox(height: 15),
               SettingsContainer(
-                child: Text(
-                  TextConstants.reminder,
-                  style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
-                ),
                 withArrow: true,
                 onTap: () {
                   Navigator.push(
@@ -126,6 +125,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     MaterialPageRoute(builder: (_) => ReminderPage()),
                   );
                 },
+                child: Text(
+                  TextConstants.reminder,
+                  style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
+                ),
               ),
               if (!kIsWeb)
                 SettingsContainer(

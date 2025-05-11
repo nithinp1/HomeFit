@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:homefit/core/extensions/exceptions.dart';
 import 'package:homefit/core/service/auth_service.dart';
+import 'dart:developer';
 
 class UserService {
   static final FirebaseAuth firebase = FirebaseAuth.instance;
@@ -10,7 +11,7 @@ class UserService {
       await firebase.currentUser?.updatePhotoURL(photoUrl);
       return true;
     } catch (e) {
-      print(e);
+      log('Error updating photo URL: $e');
       return false;
     }
   }
@@ -24,7 +25,7 @@ class UserService {
       await firebase.currentUser?.updateEmail(email);
       return true;
     } catch (e) {
-      print(e);
+      log('Error changing user data: $e');
       throw Exception(e);
     }
   }

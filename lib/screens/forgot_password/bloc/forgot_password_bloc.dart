@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:homefit/core/service/auth_service.dart';
@@ -22,7 +23,7 @@ class ForgotPasswordBloc
         await AuthService.resetPassword(emailController.text);
         yield ForgotPasswordSuccess();
       } catch (e) {
-        print('Error: $e');
+        log('Error: $e');
         yield ForgotPasswordError(message: e.toString());
       }
     }

@@ -118,7 +118,12 @@ class RepeatingDay extends StatelessWidget {
           color:
               isSelected
                   ? ColorConstants.primaryColor
-                  : ColorConstants.grey.withOpacity(0.18),
+                  : Color.fromRGBO(
+                    ColorConstants.grey.r.toInt(),
+                    ColorConstants.grey.g.toInt(),
+                    ColorConstants.grey.b.toInt(),
+                    0.18,
+                  ),
           borderRadius: BorderRadius.circular(20),
         ),
         child: Text(

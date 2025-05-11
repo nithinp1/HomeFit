@@ -20,10 +20,10 @@ class EditAccountScreen extends StatefulWidget {
   const EditAccountScreen({super.key});
 
   @override
-  _EditAccountScreenState createState() => _EditAccountScreenState();
+  EditAccountScreenState createState() => EditAccountScreenState();
 }
 
-class _EditAccountScreenState extends State<EditAccountScreen> {
+class EditAccountScreenState extends State<EditAccountScreen> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final User? user = FirebaseAuth.instance.currentUser;

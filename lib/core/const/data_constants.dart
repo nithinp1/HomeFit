@@ -252,7 +252,7 @@ class DataConstants {
   // Reminder
   static List<String> reminderDays = [
     TextConstants.everyday,
-    TextConstants.monday_friday,
+    TextConstants.mondayFriday,
     TextConstants.weekends,
     TextConstants.monday,
     TextConstants.tuesday,
