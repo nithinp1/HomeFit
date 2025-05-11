@@ -96,7 +96,10 @@ class WorkoutCard extends StatelessWidget {
                             ),
                             child: LinearPercentIndicator(
                               percent:
-                                  workout.currentProgress / workout.progress,
+                                  workout.progress > 0
+                                      ? workout.currentProgress /
+                                          workout.progress
+                                      : 0.0,
                               progressColor: ColorConstants.primaryColor,
                               backgroundColor: Color.fromRGBO(
                                 ColorConstants.primaryColor.r.toInt(),

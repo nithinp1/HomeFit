@@ -14,6 +14,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:homefit/core/const/data_constants.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -162,6 +163,26 @@ class SettingsScreenState extends State<SettingsScreen> {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(builder: (_) => SignInPage()),
+                  );
+                },
+              ),
+              SettingsContainer(
+                child: Text(
+                  'Reset Workouts',
+                  style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
+                ),
+                onTap: () {
+                  setState(() {
+                    for (var workout in DataConstants.workouts) {
+                      workout.currentProgress = 0;
+                      workout.progress = 0;
+                      for (var exercise in workout.exerciseDataList) {
+                        exercise.progress = 0;
+                      }
+                    }
+                  });
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('Workouts have been reset!')),
                   );
                 },
               ),

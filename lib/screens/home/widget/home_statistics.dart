@@ -2,6 +2,7 @@ import 'package:homefit/core/const/color_constants.dart';
 import 'package:homefit/core/const/path_constants.dart';
 import 'package:homefit/core/const/text_constants.dart';
 import 'package:flutter/material.dart';
+import 'package:homefit/core/const/data_constants.dart';
 
 class HomeStatistics extends StatelessWidget {
   const HomeStatistics({super.key});
@@ -19,6 +20,12 @@ class HomeStatistics extends StatelessWidget {
 
   Widget _createComletedWorkouts(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
+    // Calculate completed workouts dynamically
+    final completedWorkouts =
+        DataConstants.workouts
+            .where((workout) => workout.currentProgress == workout.progress)
+            .length;
+
     return Container(
       padding: const EdgeInsets.all(15),
       height: 200,
@@ -61,7 +68,7 @@ class HomeStatistics extends StatelessWidget {
             ],
           ),
           Text(
-            '12',
+            completedWorkouts.toString(),
             style: TextStyle(
               fontSize: 48,
               fontWeight: FontWeight.w700,

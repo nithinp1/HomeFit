@@ -4,8 +4,8 @@ class WorkoutData {
   final String title;
   final String exercices;
   final String minutes;
-  final int currentProgress;
-  final int progress;
+  int currentProgress;
+  int progress;
   final String image;
   final List<ExerciseData> exerciseDataList;
 

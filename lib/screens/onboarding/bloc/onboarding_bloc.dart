@@ -7,15 +7,9 @@ part 'onboarding_event.dart';
 part 'onboarding_state.dart';
 
 class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
-  OnboardingBloc() : super(OnboardingInitial());
-
-  int pageIndex = 0;
-
-  final pageController = PageController(initialPage: 0);
-
   OnboardingBloc.named() : super(OnboardingInitial()) {
     on<PageChangedEvent>((event, emit) {
-      if (pageIndex == 2) {
+      if (pageIndex >= 2) {
         emit(NextScreenState());
         return;
       }
@@ -35,4 +29,8 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
       emit(PageChangedState(counter: pageIndex));
     });
   }
+
+  int pageIndex = 0;
+
+  final pageController = PageController(initialPage: 0);
 }

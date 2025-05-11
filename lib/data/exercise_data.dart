@@ -1,7 +1,7 @@
 class ExerciseData {
   final String title;
   final int minutes;
-  final double progress;
+  double progress;
   final String video;
   final String description;
   final List<String> steps;

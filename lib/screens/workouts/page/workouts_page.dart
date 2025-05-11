@@ -14,7 +14,7 @@ class WorkoutsPage extends StatelessWidget {
 
   BlocProvider<WorkoutsBloc> _buildContext(BuildContext context) {
     return BlocProvider<WorkoutsBloc>(
-      create: (context) => WorkoutsBloc(),
+      create: (context) => WorkoutsBloc.withCardTappedHandler(),
       child: BlocConsumer<WorkoutsBloc, WorkoutsState>(
         buildWhen: (_, currState) => currState is WorkoutsInitial,
         builder: (context, state) {

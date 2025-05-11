@@ -14,17 +14,15 @@ class OnboardingPage extends StatelessWidget {
 
   BlocProvider<OnboardingBloc> _buildBody(BuildContext context) {
     return BlocProvider<OnboardingBloc>(
-      create: (BuildContext context) => OnboardingBloc(),
+      create: (BuildContext context) => OnboardingBloc.named(),
       child: BlocConsumer<OnboardingBloc, OnboardingState>(
         listenWhen: (_, currState) => currState is NextScreenState,
         listener: (context, state) {
-          Navigator.of(context).pushReplacement(
-            MaterialPageRoute(
-              builder: (_) {
-                return SignUpPage();
-              },
-            ),
-          );
+          if (state is NextScreenState) {
+            Navigator.of(
+              context,
+            ).pushReplacement(MaterialPageRoute(builder: (_) => SignUpPage()));
+          }
         },
         buildWhen: (_, currState) => currState is OnboardingInitial,
         builder: (context, state) {

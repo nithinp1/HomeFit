@@ -10,15 +10,19 @@ class BackTappedState extends StartWorkoutState {}
 class PlayTimerState extends StartWorkoutState {
   final int time;
 
-  PlayTimerState({
-    required this.time,
-  });
+  PlayTimerState({required this.time});
 }
 
 class PauseTimerState extends StartWorkoutState {
   final int currentTime;
 
-  PauseTimerState({
-    required this.currentTime,
-  });
+  PauseTimerState({required this.currentTime});
 }
+
+class NextExerciseState extends StartWorkoutState {
+  final int currentIndex;
+
+  NextExerciseState({required this.currentIndex});
+}
+
+class WorkoutCompletedState extends StartWorkoutState {}
